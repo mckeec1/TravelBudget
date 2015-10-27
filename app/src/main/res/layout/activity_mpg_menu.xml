@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.travelbudget.travelbudget.mpgMenu"
+    android:background="@drawable/tuscany">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffb9b"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/textView2"
+        android:id="@+id/frameLayout">
+
+        <CheckBox
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:text="10-15"
+            android:id="@+id/checkBox"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="50dp"
+            android:background="#ccff73"
+            android:textColor="#000"
+            android:textSize="35dp" />
+
+        <CheckBox
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:text="16-20"
+            android:id="@+id/checkBox2"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="100dp"
+            android:background="#ccff73"
+            android:textColor="#000"
+            android:textSize="35dp" />
+
+        <CheckBox
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:text="21-28"
+            android:id="@+id/checkBox3"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="150dp"
+            android:background="#ccff73"
+            android:textColor="#000"
+            android:textSize="35dp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select MPG"
+        android:id="@+id/textView2"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="45dp"
+        android:background="#ffc31c"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+</RelativeLayout>
