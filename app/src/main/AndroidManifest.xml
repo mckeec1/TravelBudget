@@ -24,6 +24,14 @@
             android:name=".mpgMenu"
             android:label="@string/title_activity_mpg_menu" >
         </activity>
+        <activity
+            android:name=".people"
+            android:label="@string/title_activity_people" >
+        </activity>
+        <activity
+            android:name=".food"
+            android:label="@string/title_activity_food" >
+        </activity>
     </application>
 
 </manifest>

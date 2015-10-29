@@ -5,19 +5,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
-public class optionsScreen1 extends AppCompatActivity {
+public class people extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_options_screen1);
+        setContentView(R.layout.activity_people);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_options_screen1, menu);
+        getMenuInflater().inflate(R.menu.menu_people, menu);
         return true;
     }
 
