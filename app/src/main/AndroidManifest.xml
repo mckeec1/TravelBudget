@@ -36,6 +36,10 @@
             android:name=".hotel"
             android:label="@string/title_activity_hotel" >
         </activity>
+        <activity
+            android:name=".taxes"
+            android:label="@string/title_activity_taxes" >
+        </activity>
     </application>
 
 </manifest>

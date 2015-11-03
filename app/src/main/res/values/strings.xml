@@ -8,4 +8,5 @@
     <string name="title_activity_people">people</string>
     <string name="title_activity_food">food</string>
     <string name="title_activity_hotel">hotel</string>
+    <string name="title_activity_taxes">taxes</string>
 </resources>
