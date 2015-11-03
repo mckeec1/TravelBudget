@@ -7,4 +7,43 @@
     tools:context="com.travelbudget.travelbudget.taxes"
     android:background="@drawable/hawaii">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="#7bbbff">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText8"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:hint="Tax rates" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/button10"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="#5154ff"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:layout_marginBottom="10dp" />
+    </FrameLayout>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:id="@+id/editText9"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#427dff"
+        android:gravity="center"
+        android:text="Tax Rate"
+        android:layout_marginTop="25dp" />
 </RelativeLayout>
