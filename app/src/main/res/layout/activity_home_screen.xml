@@ -24,6 +24,7 @@
         android:background="@drawable/background"
         android:clickable="true"
         android:contentDescription="background for home screen"
-        android:baselineAlignBottom="false" />
+        android:baselineAlignBottom="false"
+        android:longClickable="true" />
 
 </RelativeLayout>

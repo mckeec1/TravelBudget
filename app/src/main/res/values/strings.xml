@@ -9,4 +9,5 @@
     <string name="title_activity_food">food</string>
     <string name="title_activity_hotel">hotel</string>
     <string name="title_activity_taxes">taxes</string>
+    <string name="title_activity_compiler">compiler</string>
 </resources>

@@ -40,6 +40,10 @@
             android:name=".taxes"
             android:label="@string/title_activity_taxes" >
         </activity>
+        <activity
+            android:name=".compiler"
+            android:label="@string/title_activity_compiler" >
+        </activity>
     </application>
 
 </manifest>
