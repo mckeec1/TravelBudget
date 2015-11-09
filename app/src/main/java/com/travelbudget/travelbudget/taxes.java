@@ -1,9 +1,11 @@
 package com.travelbudget.travelbudget;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class taxes extends AppCompatActivity {
 
@@ -13,6 +15,11 @@ public class taxes extends AppCompatActivity {
         setContentView(R.layout.activity_taxes);
     }
 
+    public void sendMessage(View view)
+    {
+        Intent intent = new Intent(taxes.this, optionsScreen1.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,9 +1,11 @@
 package com.travelbudget.travelbudget;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class hotel extends AppCompatActivity {
 
@@ -11,6 +13,12 @@ public class hotel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+    }
+
+    public void sendMessage(View view)
+    {
+        Intent intent = new Intent(hotel.this, optionsScreen1.class);
+        startActivity(intent);
     }
 
     @Override

@@ -45,5 +45,21 @@
         android:background="#427dff"
         android:gravity="center"
         android:text="Tax Rate"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="25dp"
+        android:inputType="text" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Options"
+        android:onClick="sendMessage"
+        android:id="@+id/button11"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:longClickable="true"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:background="#42a5ff" />
 </RelativeLayout>

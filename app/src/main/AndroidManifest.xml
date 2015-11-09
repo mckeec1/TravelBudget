@@ -44,6 +44,10 @@
             android:name=".compiler"
             android:label="@string/title_activity_compiler" >
         </activity>
+        <activity
+            android:name=".progressScreen"
+            android:label="@string/title_activity_progress_screen" >
+        </activity>
     </application>
 
 </manifest>

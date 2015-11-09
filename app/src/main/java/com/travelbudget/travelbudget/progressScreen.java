@@ -1,30 +1,24 @@
 package com.travelbudget.travelbudget;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class people extends AppCompatActivity {
+public class progressScreen extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people);
+        setContentView(R.layout.activity_progress_screen);
+
     }
 
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(people.this, optionsScreen1.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_people, menu);
+        getMenuInflater().inflate(R.menu.menu_progress_screen, menu);
         return true;
     }
 

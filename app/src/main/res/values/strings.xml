@@ -10,4 +10,6 @@
     <string name="title_activity_hotel">hotel</string>
     <string name="title_activity_taxes">taxes</string>
     <string name="title_activity_compiler">compiler</string>
+    <string name="title_activity_progress_screen">progressScreen</string>
+    <string name="mpg">MPG</string>
 </resources>
