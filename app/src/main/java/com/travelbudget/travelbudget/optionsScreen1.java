@@ -15,6 +15,7 @@ public class optionsScreen1 extends AppCompatActivity {
     Button button3;
     Button button4;
     Button button5;
+    Button button17;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class optionsScreen1 extends AppCompatActivity {
         button3 = (Button)findViewById(R.id.button3);
         button4 = (Button)findViewById(R.id.button4);
         button5 = (Button)findViewById(R.id.button5);
+        button17 = (Button)findViewById(R.id.button17);
     }
 
     public void onClick(View v) {
@@ -42,8 +44,11 @@ public class optionsScreen1 extends AppCompatActivity {
         }if (v.getId() == R.id.button4) {
             Intent intent = new Intent (optionsScreen1.this, hotel.class);
             startActivity(intent);
-        }else if (v.getId() == R.id.button5) {
+        }if (v.getId() == R.id.button5) {
             Intent intent = new Intent (optionsScreen1.this, people.class);
+            startActivity(intent);
+        }else if (v.getId() == R.id.button17) {
+            Intent intent = new Intent (optionsScreen1.this, compiler.class);
             startActivity(intent);
         }
 

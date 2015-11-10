@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class taxes extends AppCompatActivity {
 
@@ -13,7 +16,25 @@ public class taxes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taxes);
+        initDisplayButton();
     }
+
+    private void initDisplayButton() {
+        Button displayButton = (Button)
+                findViewById(R.id.button10);
+        displayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                EditText tax = (EditText)
+                        findViewById(R.id.taxed);
+                TextView textDisplay = (TextView)
+                        findViewById(R.id.textView);
+                String taxPaid = tax.getText().toString();
+                System.out.println(taxPaid);
+            }
+        });
+    }
+
 
     public void sendMessage(View view)
     {

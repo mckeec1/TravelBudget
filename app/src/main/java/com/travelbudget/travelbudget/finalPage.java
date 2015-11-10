@@ -7,47 +7,28 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class food extends AppCompatActivity {
+public class finalPage extends AppCompatActivity {
+Button button19;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food);
-        initDisplayButton();}
+        setContentView(R.layout.activity_final_page);
 
+        button19 = (Button)findViewById(R.id.button19);
 
-        private void initDisplayButton() {
-        Button displayButton = (Button)
-                findViewById(R.id.button8);
-        displayButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                EditText food = (EditText)
-                        findViewById(R.id.foodPrice);
-                TextView textDisplay = (TextView)
-                        findViewById(R.id.textView);
-                String foodPricesA = food.getText().toString();
-                System.out.println(foodPricesA);
-            }
-    });
-        }
-
-
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(food.this, optionsScreen1.class);
-        startActivity(intent);
     }
+
+    public void onClick (View v) {
+        if (v.getId() == R.id.button19) {
+            Intent intent = new Intent(finalPage.this, optionsScreen1.class);
+            startActivity(intent);}}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_food, menu);
+        getMenuInflater().inflate(R.menu.menu_final_page, menu);
         return true;
     }
 

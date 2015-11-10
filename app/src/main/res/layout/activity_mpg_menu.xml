@@ -24,7 +24,8 @@
             android:layout_gravity="center_horizontal|bottom"
             android:textSize="30dp"
             android:background="#ccff73"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:clickable="true" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
             android:inputType="number"
             android:ellipsize="start"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/strMPG"
             android:background="#76aaaaaa"
             android:textColorHint="#666564"
             android:textStyle="bold"

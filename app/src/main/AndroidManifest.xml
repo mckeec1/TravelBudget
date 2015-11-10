@@ -48,6 +48,10 @@
             android:name=".progressScreen"
             android:label="@string/title_activity_progress_screen" >
         </activity>
+        <activity
+            android:name=".finalPage"
+            android:label="@string/title_activity_final_page" >
+        </activity>
     </application>
 
 </manifest>
