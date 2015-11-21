@@ -1,5 +1,8 @@
 package com.travelbudget.travelbudget;
 
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.lang.String;
 
 public class mpgMenu extends AppCompatActivity {
@@ -23,28 +28,48 @@ public class mpgMenu extends AppCompatActivity {
         Button displayButton = (Button)
                 findViewById(R.id.button6);
         displayButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public  void onClick(View arg0) {
+                                             @Override
+                                             public void onClick(View arg0) {
 
-                EditText mpg = (EditText)
-                        findViewById(R.id.strMPG);
-                TextView textDisplay = (TextView)
-                        findViewById(R.id.textView);
-                String mpgToDisplay = mpg.getText().toString();
-                System.out.println(mpgToDisplay);
-
-            }
-        });
-    }
+                                                 EditText mpg = (EditText)
+                                                         findViewById(R.id.strMPG);
+                                                 TextView textDisplay = (TextView)
+                                                         findViewById(R.id.textView);
+                                                 String mpgToDisplay = mpg.getText().toString();
+                                                 System.out.println(mpgToDisplay);
 
 
-public void sendMessage(View view)
-{
-    Intent intent = new Intent(mpgMenu.this, optionsScreen1.class);
-    startActivity(intent);
+                                                 AlertDialog.Builder dlgAlert = new AlertDialog.Builder(mpgMenu.this);
+                                                 dlgAlert.setMessage("Is this the right information: " + mpgToDisplay);
+                                                 dlgAlert.setTitle("Travel Budget");
+                                                 dlgAlert.setPositiveButton("Ok",
+                                                         new DialogInterface.OnClickListener() {
+                                                             public void onClick(DialogInterface dialog, int which) {
+                                                                 //dismiss the dialog
+                                                                 startActivity(new Intent(mpgMenu.this, optionsScreen1.class));
+                                                                 Toast.makeText(mpgMenu.this, "Data saved", Toast.LENGTH_SHORT).show()
+                                                                 ;
+                                                             }
+
+                                                         });
+                                                 dlgAlert.setCancelable(true);
+                                                 dlgAlert.create().show();
+                                             }
 
 
-}
+                                         }
+        );
+
+
+
+
+
+        }
+
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

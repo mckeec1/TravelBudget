@@ -1,31 +1,41 @@
 package com.travelbudget.travelbudget;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import java.lang.String;
+import android.content.Context;
 
 
 public class compiler extends AppCompatActivity {
 
-    Variables mpgToDisplay;
-    Variables taxPaid;
-    Variables foodPricesA;
-    Variables hotelPrice;
-    Variables payable;
+    //Variables mpgToDisplay;
+    //Variables taxPaid;
+    //Variables foodPricesA;
+    //Variables hotelPrice;
+    //Variables payable;
 
     Button button16;
     Button button18;
+
     String a;
     String b;
     String c;
-    String d;
     String e;
+
+    public static final String SharedPrefManager = "PrefFile";
+    SharedPreferences preferences = getSharedPreferences(SharedPrefManager, MODE_PRIVATE);
+    String hotelPrice = preferences.getString("Hotel Price", "");
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +54,7 @@ public class compiler extends AppCompatActivity {
         button18 = (Button)findViewById(R.id.button18);
 
         TextView mpg = (TextView) this.findViewById(R.id.mpg1);
-        mpg.setText("Your mpg's are :"  + mpgToDisplay);
+        mpg.setText("Your mpg's are :"  + a);
 
 
         //State Tax
@@ -64,9 +74,9 @@ public class compiler extends AppCompatActivity {
         //Hotel
         Intent intent3 = this.getIntent();
         if(intent3 !=null)
-            d = intent3.getStringExtra("hotelPrice");
+            hotelPrice = intent3.getStringExtra("Hotel Price");
         TextView hotel = (TextView)this.findViewById(R.id.hotel1);
-        hotel.setText("Your hotel price is :" + d);
+        hotel.setText("Your hotel price is :" + hotelPrice);
 
         //People
         Intent intent4 = this.getIntent();

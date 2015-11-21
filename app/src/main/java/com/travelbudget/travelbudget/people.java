@@ -1,5 +1,7 @@
 package com.travelbudget.travelbudget;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class people extends AppCompatActivity {
 
@@ -31,6 +34,22 @@ public class people extends AppCompatActivity {
                         findViewById(R.id.textView);
                 String payable = people.getText().toString();
                 System.out.println(payable);
+
+                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(people.this);
+                dlgAlert.setMessage("Is this the right information: " + payable);
+                dlgAlert.setTitle("Travel Budget");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                startActivity(new Intent(people.this, optionsScreen1.class));
+                                Toast.makeText(people.this, "Data saved", Toast.LENGTH_SHORT).show()
+                                ;}
+
+                        });
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+
             }
         });
     }

@@ -1,5 +1,7 @@
 package com.travelbudget.travelbudget;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,8 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 public class food extends AppCompatActivity {
 
@@ -33,16 +35,28 @@ public class food extends AppCompatActivity {
                         findViewById(R.id.textView);
                 String foodPricesA = food.getText().toString();
                 System.out.println(foodPricesA);
+
+                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(food.this);
+                dlgAlert.setMessage("Is this the right information: " + foodPricesA);
+                dlgAlert.setTitle("Travel Budget");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                startActivity(new Intent(food.this, optionsScreen1.class));
+                                Toast.makeText(food.this, "Data saved", Toast.LENGTH_SHORT).show()
+                                ;
+                            }
+
+
+                        });
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+
             }
-    });
+        });
         }
 
-
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(food.this, optionsScreen1.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

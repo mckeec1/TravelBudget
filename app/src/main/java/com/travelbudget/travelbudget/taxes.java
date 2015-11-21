@@ -1,5 +1,7 @@
 package com.travelbudget.travelbudget;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class taxes extends AppCompatActivity {
 
@@ -31,16 +34,27 @@ public class taxes extends AppCompatActivity {
                         findViewById(R.id.textView);
                 String taxPaid = tax.getText().toString();
                 System.out.println(taxPaid);
+
+                AlertDialog.Builder dlgAlert = new AlertDialog.Builder(taxes.this);
+                dlgAlert.setMessage("Is this the right information: " + taxPaid);
+                dlgAlert.setTitle("Travel Budget");
+                dlgAlert.setPositiveButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                //dismiss the dialog
+                                startActivity(new Intent(taxes.this, optionsScreen1.class));
+                                Toast.makeText(taxes.this,"Data saved", Toast.LENGTH_SHORT).show();
+                                }
+
+                        });
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+
             }
         });
     }
 
 
-    public void sendMessage(View view)
-    {
-        Intent intent = new Intent(taxes.this, optionsScreen1.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
