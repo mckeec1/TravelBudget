@@ -26,12 +26,12 @@ public class compiler extends AppCompatActivity {
 
     String a;
     String b;
-    String c;
+    //String c;
     String e;
+    String f;
 
     public static final String SharedPrefManager = "PrefFile";
-    SharedPreferences preferences = getSharedPreferences(SharedPrefManager, MODE_PRIVATE);
-    String hotelPrice = preferences.getString("Hotel Price", "");
+
 
 
 
@@ -53,6 +53,8 @@ public class compiler extends AppCompatActivity {
         button16 = (Button)findViewById(R.id.button16);
         button18 = (Button)findViewById(R.id.button18);
 
+
+
         TextView mpg = (TextView) this.findViewById(R.id.mpg1);
         mpg.setText("Your mpg's are :"  + a);
 
@@ -67,15 +69,15 @@ public class compiler extends AppCompatActivity {
         //Food
         Intent intent2 = this.getIntent();
         if(intent2 !=null)
-            c = intent2.getStringExtra("foodPricesA");
+           f = intent2.getStringExtra("foodPricesA");
         TextView food = (TextView)this.findViewById(R.id.food1);
-        food.setText("Your food price is :" + c);
+        food.setText("Your food price is :" + f);
 
         //Hotel
         Intent intent3 = this.getIntent();
-        if(intent3 !=null)
-            hotelPrice = intent3.getStringExtra("Hotel Price");
         TextView hotel = (TextView)this.findViewById(R.id.hotel1);
+        SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String hotelPrice = preferences.getString("Hotel price", "default price");
         hotel.setText("Your hotel price is :" + hotelPrice);
 
         //People

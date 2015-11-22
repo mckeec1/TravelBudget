@@ -1,6 +1,7 @@
 package com.travelbudget.travelbudget;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,8 @@ import java.lang.*;
 
 
 public class hotel extends AppCompatActivity {
+
+    public static final String SharedPrefManager = "PrefFile";
 
 
     @Override
@@ -44,8 +47,9 @@ public class hotel extends AppCompatActivity {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(hotel.this);
                 prefs.getBoolean("keystring", true);
 
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("storedString", hotelPrice); // value to store
+                SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Hotel price", hotelPrice); // value to store
                 editor.commit();
 
 
