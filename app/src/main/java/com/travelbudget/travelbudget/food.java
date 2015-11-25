@@ -1,8 +1,10 @@
 package com.travelbudget.travelbudget;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 
 public class food extends AppCompatActivity {
+
+    public static final String SharedPrefManager = "PrefFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +33,20 @@ public class food extends AppCompatActivity {
         displayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                EditText food = (EditText)
+                EditText foods = (EditText)
                         findViewById(R.id.foodPrice);
                 TextView textDisplay = (TextView)
                         findViewById(R.id.textView);
-                String foodPricesA = food.getText().toString();
-                System.out.println(foodPricesA);
+                String food = foods.getText().toString();
+                System.out.println(food);
+
+                SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Food", food); // value to store
+                editor.commit();
 
                 AlertDialog.Builder dlgAlert = new AlertDialog.Builder(food.this);
-                dlgAlert.setMessage("Is this the right information: " + foodPricesA);
+                dlgAlert.setMessage("Is this the right information: " + food);
                 dlgAlert.setTitle("Travel Budget");
                 dlgAlert.setPositiveButton("Ok",
                         new DialogInterface.OnClickListener() {

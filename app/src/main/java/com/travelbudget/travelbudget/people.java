@@ -1,8 +1,10 @@
 package com.travelbudget.travelbudget;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class people extends AppCompatActivity {
+
+    public static final String SharedPrefManager = "PrefFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +32,20 @@ public class people extends AppCompatActivity {
         displayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                EditText people = (EditText)
+                EditText miles = (EditText)
                         findViewById(R.id.peopleCash);
                 TextView textDisplay = (TextView)
                         findViewById(R.id.textView);
-                String payable = people.getText().toString();
-                System.out.println(payable);
+                String mileage = miles.getText().toString();
+                System.out.println(mileage);
+
+                SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Total mileage", mileage); // value to store
+                editor.commit();
 
                 AlertDialog.Builder dlgAlert = new AlertDialog.Builder(people.this);
-                dlgAlert.setMessage("Is this the right information: " + payable);
+                dlgAlert.setMessage("Is this the right information: " + mileage);
                 dlgAlert.setTitle("Travel Budget");
                 dlgAlert.setPositiveButton("Ok",
                         new DialogInterface.OnClickListener() {

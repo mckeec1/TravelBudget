@@ -17,7 +17,7 @@ public class SharedPrefManager {
 
     private static String hotelPrice = "";
 
-    private static String people = "";
+    private static String mileage = "";
 
     private static String taxes = "";
 
@@ -34,7 +34,7 @@ public class SharedPrefManager {
 
         hotelPrice = settings.getString("Hotel price", "");
 
-        people = settings.getString("People to pay", "");
+        mileage = settings.getString("Total mileage", "");
 
         taxes = settings.getString("Tax rates", "");
     }
@@ -48,7 +48,7 @@ public class SharedPrefManager {
         editor.putString("MPG's", mpgs);
         editor.putString("Food", food);
         editor.putString("Hotel price", hotelPrice);
-        editor.putString("People to pay", people);
+        editor.putString("Total mileage", mileage);
         editor.putString("Tax rates", taxes);
 
         editor.commit();
@@ -88,10 +88,7 @@ public class SharedPrefManager {
         hotelPrice = c;
     }
 
-    public static void setPeople (String d)
-    {
-        food = d;
-    }
+    public static void setPeople (String d) {mileage = d;}
 
     public static void setTaxes (String e)
     {
@@ -112,7 +109,7 @@ public class SharedPrefManager {
 
     public static String getPeople()
     {
-        return people;
+        return mileage;
     }
 
     public static String getTaxes()

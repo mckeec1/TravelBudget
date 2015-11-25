@@ -1,15 +1,26 @@
 package com.travelbudget.travelbudget;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class finalPage extends AppCompatActivity {
+
+    public static final String SharedPrefManager = "PrefFile";
+
+
+Integer int1;
+    Integer int2;
+    Integer finalMPGS;
 Button button19;
+    String finalMpgPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +28,18 @@ Button button19;
         setContentView(R.layout.activity_final_page);
 
         button19 = (Button)findViewById(R.id.button19);
+
+        SharedPreferences preferences1 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String mpgs = preferences1.getString("MPG's", "default mpgs");
+        SharedPreferences preferences3 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String mileage = preferences3.getString("Total mileage", "default People");
+        int1 = new Integer (Integer.parseInt(mpgs));
+        int2 = new Integer (Integer.parseInt(mileage));
+        finalMPGS = int1 + int2;
+        TextView eq1 = (TextView) this.findViewById(R.id.amount);
+        eq1.setText("$" + finalMPGS);
+
+
 
     }
 

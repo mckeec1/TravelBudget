@@ -43,49 +43,41 @@ public class compiler extends AppCompatActivity {
         setContentView(R.layout.activity_compiler);
 
 
-        //Bundle extras = getIntent().getExtras();
-        //String a = extras.getString("mpgToDisplay");
-        //MPG class
-        //Intent intent=this.getIntent();
-        //if(intent !=null)
-           // a = intent.getStringExtra("mpgToDisplay");
-
         button16 = (Button)findViewById(R.id.button16);
         button18 = (Button)findViewById(R.id.button18);
 
 
 
+        //mpg class
         TextView mpg = (TextView) this.findViewById(R.id.mpg1);
-        mpg.setText("Your mpg's are :"  + a);
+        SharedPreferences preferences1 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String mpgs = preferences1.getString("MPG's", "default mpgs");
+        mpg.setText("Your mpg's are :"  + mpgs);
 
 
         //State Tax
-        Intent intent1 = this.getIntent();
-        if(intent1 !=null)
-            b = intent1.getStringExtra("taxPaid");
         TextView tax = (TextView)this.findViewById(R.id.tax1);
-        tax.setText("Your tax average is :" + b);
+        SharedPreferences preferences4 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String taxes = preferences4.getString("Tax rates", "default tax");
+        tax.setText("Your tax average is :" + taxes);
 
         //Food
-        Intent intent2 = this.getIntent();
-        if(intent2 !=null)
-           f = intent2.getStringExtra("foodPricesA");
-        TextView food = (TextView)this.findViewById(R.id.food1);
-        food.setText("Your food price is :" + f);
+        TextView foodd = (TextView)this.findViewById(R.id.food1);
+        SharedPreferences preferences2 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String food = preferences2.getString("Food", "default food");
+        foodd.setText("Your food price is :" + food);
 
         //Hotel
-        Intent intent3 = this.getIntent();
         TextView hotel = (TextView)this.findViewById(R.id.hotel1);
         SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
         String hotelPrice = preferences.getString("Hotel price", "default price");
         hotel.setText("Your hotel price is :" + hotelPrice);
 
-        //People
-        Intent intent4 = this.getIntent();
-        if(intent4 !=null)
-            e = intent4.getStringExtra("payable");
-        TextView people = (TextView)this.findViewById(R.id.people1);
-        people.setText("Your fellow passengers are :" + e);
+        //Trip
+        TextView people1 = (TextView)this.findViewById(R.id.people1);
+        SharedPreferences preferences3 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String mileage = preferences3.getString("Total mileage", "default People");
+        people1.setText("Your total mileage :" + mileage);
 
 
 

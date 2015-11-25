@@ -1,8 +1,10 @@
 package com.travelbudget.travelbudget;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class taxes extends AppCompatActivity {
+
+    public static final String SharedPrefManager = "PrefFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +36,24 @@ public class taxes extends AppCompatActivity {
                         findViewById(R.id.taxed);
                 TextView textDisplay = (TextView)
                         findViewById(R.id.textView);
-                String taxPaid = tax.getText().toString();
-                System.out.println(taxPaid);
+                String taxes = tax.getText().toString();
+                System.out.println(taxes);
+
+                SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Tax rates", taxes); // value to store
+                editor.commit();
 
                 AlertDialog.Builder dlgAlert = new AlertDialog.Builder(taxes.this);
-                dlgAlert.setMessage("Is this the right information: " + taxPaid);
+                dlgAlert.setMessage("Is this the right information: " + taxes);
                 dlgAlert.setTitle("Travel Budget");
                 dlgAlert.setPositiveButton("Ok",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 //dismiss the dialog
                                 startActivity(new Intent(taxes.this, optionsScreen1.class));
-                                Toast.makeText(taxes.this,"Data saved", Toast.LENGTH_SHORT).show();
-                                }
+                                Toast.makeText(taxes.this, "Data saved", Toast.LENGTH_SHORT).show();
+                            }
 
                         });
                 dlgAlert.setCancelable(true);
