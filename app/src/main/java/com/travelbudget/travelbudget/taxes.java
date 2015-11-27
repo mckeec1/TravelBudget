@@ -32,20 +32,20 @@ public class taxes extends AppCompatActivity {
         displayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                EditText tax = (EditText)
+                EditText mis = (EditText)
                         findViewById(R.id.taxed);
                 TextView textDisplay = (TextView)
                         findViewById(R.id.textView);
-                String taxes = tax.getText().toString();
-                System.out.println(taxes);
+                String misc = mis.getText().toString();
+                System.out.println(misc);
 
                 SharedPreferences preferences = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("Tax rates", taxes); // value to store
+                editor.putString("Extra spending", misc); // value to store
                 editor.commit();
 
                 AlertDialog.Builder dlgAlert = new AlertDialog.Builder(taxes.this);
-                dlgAlert.setMessage("Is this the right information: " + taxes);
+                dlgAlert.setMessage("Is this the right information: " + misc);
                 dlgAlert.setTitle("Travel Budget");
                 dlgAlert.setPositiveButton("Ok",
                         new DialogInterface.OnClickListener() {

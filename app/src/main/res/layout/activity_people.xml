@@ -24,7 +24,7 @@
             android:id="@+id/peopleCash"
             android:layout_gravity="center"
             android:gravity="center"
-            android:hint="Fellow Travelers.." />
+            android:hint="Mileage" />
 
         <Button
             android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="# of Companions"
+        android:text="Total Mileage"
         android:textColor="#fff"
         android:textStyle="bold"
         android:gravity="center"

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.lang.Integer;
 
 public class finalPage extends AppCompatActivity {
 
@@ -18,9 +19,12 @@ public class finalPage extends AppCompatActivity {
 
 Integer int1;
     Integer int2;
+    Integer int3;
+    Integer int4;
+    Integer int5;
     Integer finalMPGS;
+    Integer total;
 Button button19;
-    String finalMpgPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +37,23 @@ Button button19;
         String mpgs = preferences1.getString("MPG's", "default mpgs");
         SharedPreferences preferences3 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
         String mileage = preferences3.getString("Total mileage", "default People");
+        SharedPreferences preferences2 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String food = preferences2.getString("Food", "default food");
+        SharedPreferences preferences4 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String hotelPrice = preferences4.getString("Hotel price", "default price");
+        SharedPreferences preferences5 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
+        String misc = preferences5.getString("Extra spending", "default spending");
+
+
         int1 = new Integer (Integer.parseInt(mpgs));
         int2 = new Integer (Integer.parseInt(mileage));
-        finalMPGS = int1 + int2;
+        int3 = new Integer (Integer.parseInt(food));
+        int4 = new Integer(Integer.parseInt(hotelPrice));
+        int5 = new Integer (Integer.parseInt(misc));
+        finalMPGS = int2 * 2 / int1;
+        total = finalMPGS + int3 + int4 + int5;
         TextView eq1 = (TextView) this.findViewById(R.id.amount);
-        eq1.setText("$" + finalMPGS);
+        eq1.setText("$" + total);
 
 
 

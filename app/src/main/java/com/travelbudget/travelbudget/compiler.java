@@ -55,11 +55,11 @@ public class compiler extends AppCompatActivity {
         mpg.setText("Your mpg's are :"  + mpgs);
 
 
-        //State Tax
-        TextView tax = (TextView)this.findViewById(R.id.tax1);
+        //Extra Spending
+        TextView mis = (TextView)this.findViewById(R.id.tax1);
         SharedPreferences preferences4 = getSharedPreferences(SharedPrefManager, Context.MODE_PRIVATE);
-        String taxes = preferences4.getString("Tax rates", "default tax");
-        tax.setText("Your tax average is :" + taxes);
+        String misc = preferences4.getString("Extra spending", "default spending");
+        mis.setText("Your extra spending is :" + misc);
 
         //Food
         TextView foodd = (TextView)this.findViewById(R.id.food1);

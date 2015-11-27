@@ -24,7 +24,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="State Tax"
+        android:text="Extra Expenses"
         android:id="@+id/button2"
         android:layout_gravity="center_horizontal"
         android:background="#40ff7a"
@@ -75,7 +75,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Companions"
+        android:text="Mileage"
         android:id="@+id/button5"
         android:background="#40ff7a"
         android:textColor="#000"
@@ -89,7 +89,7 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Done"
         android:id="@+id/button17"
@@ -99,5 +99,6 @@
         android:longClickable="true"
         android:textColor="#000"
         android:textStyle="bold"
+        android:textSize="75px"
         android:onClick="onClick" />
 </RelativeLayout>
